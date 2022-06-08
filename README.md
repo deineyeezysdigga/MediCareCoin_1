@@ -824,3 +824,5 @@ const SupportedTokens = () => {
 ```
 
 ### Where to host your dApp?
+#   M e d i C a r e C o i n _ 1  
+ 
