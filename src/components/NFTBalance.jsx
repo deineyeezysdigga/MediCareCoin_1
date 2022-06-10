@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { useMoralis, useNFTBalances } from "react-moralis";
 import { Card, Image, Tooltip, Modal, Input, Skeleton } from "antd";
-import {
-  FileSearchOutlined,
-  SendOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+import { FileSearchOutlined, SendOutlined } from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
 import AddressInput from "./AddressInput";
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
@@ -87,8 +83,7 @@ function NFTBalance() {
                       <FileSearchOutlined
                         onClick={() =>
                           window.open(
-                            `${getExplorer(chainId)}address/${
-                              nft.token_address
+                            `${getExplorer(chainId)}address/${nft.token_address
                             }`,
                             "_blank",
                           )
@@ -98,13 +93,8 @@ function NFTBalance() {
                     <Tooltip title="Transfer NFT">
                       <SendOutlined onClick={() => handleTransferClick(nft)} />
                     </Tooltip>,
-                    <Tooltip title="Sell On OpenSea">
-                      <ShoppingCartOutlined
-                        onClick={() => alert("OPENSEA INTEGRATION COMING!")}
-                      />
-                    </Tooltip>,
                   ]}
-                  style={{ width: 240, border: "2px solid #e7eaf3" }}
+                  style={{ width: 300, border: "2px solid #e7eaf3" }}
                   cover={
                     <Image
                       preview={false}
