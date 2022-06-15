@@ -8,6 +8,9 @@ import { SelectOutlined } from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
 import Text from "antd/lib/typography/Text";
 import { connectors } from "./config";
+import React from 'react';
+import QRCode from "react-qr-code";
+
 const styles = {
   account: {
     height: "42px",
@@ -102,7 +105,6 @@ function Account() {
       </>
     );
   }
-
   return (
     <>
       {/* <button
@@ -121,6 +123,7 @@ function Account() {
       >
         Hi
       </button> */}
+
       <div style={styles.account} onClick={() => setIsModalVisible(true)}>
         <p style={{ marginRight: "5px", ...styles.text }}>
           {getEllipsisTxt(account, 6)}
@@ -145,7 +148,7 @@ function Account() {
             marginTop: "10px",
             borderRadius: "1rem",
           }}
-          bodyStyle={{ padding: "15px" }}
+          bodyStyle={{ padding: "30px" }}
         >
           <Address
             avatar="left"
@@ -153,6 +156,8 @@ function Account() {
             copyable
             style={{ fontSize: "20px" }}
           />
+          <br></br>
+          <QRCode value={account} />
           <div style={{ marginTop: "10px", padding: "0 10px" }}>
             <a
               href={`${getExplorer(chainId)}/address/${account}`}
@@ -163,6 +168,7 @@ function Account() {
               View on Explorer
             </a>
           </div>
+
         </Card>
         <Button
           size="large"
@@ -182,6 +188,7 @@ function Account() {
         >
           Disconnect Wallet
         </Button>
+
       </Modal>
     </>
   );

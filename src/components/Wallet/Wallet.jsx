@@ -1,4 +1,3 @@
-import Transfer from "./components/Transfer";
 import NativeBalance from "../NativeBalance";
 import Address from "../Address/Address";
 import Blockie from "../Blockie";
@@ -37,7 +36,6 @@ function Wallet() {
         </div>
       }
     >
-      <Transfer />
     </Card>
   );
 }
