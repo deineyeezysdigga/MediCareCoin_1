@@ -41,7 +41,7 @@ function NFTBalance() {
     };
 
     if (options.type === "erc1155") {
-      options.amount = amount ?? nft.amount;
+      options.amount = 1;
     }
 
     setIsPending(true);
