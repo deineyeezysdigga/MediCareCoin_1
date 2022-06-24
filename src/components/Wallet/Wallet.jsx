@@ -2,6 +2,13 @@ import NativeBalance from "../NativeBalance";
 import Address from "../Address/Address";
 import Blockie from "../Blockie";
 import { Card } from "antd";
+import React from 'react';
+import QRCode from "react-qr-code";
+//import { getExplorer } from "helpers/networks";
+import { useMoralis } from "react-moralis";
+
+
+
 
 const styles = {
   title: {
@@ -25,14 +32,18 @@ const styles = {
 };
 
 function Wallet() {
+  const { account } = useMoralis();
   return (
     <Card
       style={styles.card}
       title={
         <div style={styles.header}>
           <Blockie scale={5} avatar currentWallet style />
-          <Address size="6" copyable />
+          <Address size={9} copyable />
           <NativeBalance />
+          <br></br>
+          Scan QR-Code:
+          <QRCode value={account} hoverable />
         </div>
       }
     >

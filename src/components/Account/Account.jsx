@@ -157,6 +157,7 @@ function Account() {
             style={{ fontSize: "20px" }}
           />
           <br></br>
+          Scan QR-Code:
           <QRCode value={account} />
           <div style={{ marginTop: "10px", padding: "0 10px" }}>
             <a
